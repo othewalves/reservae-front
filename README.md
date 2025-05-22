@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
 
-## Getting Started
+## 🎯 Padrões e Decisões
 
-First, run the development server:
+### ✅ **Feature-based Architecture**
+Organização por domínio funcional. Cada pasta em `features/` representa uma área do sistema.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### ✅ **Container/Presenter Pattern**
+Separação entre:
+- **Presenter (`LoginForm`)** → apenas JSX/estética
+- **Container (`LoginContainer`)** → conecta lógica e dados
+- **Hook (`useLogin`)** → lógica isolada e testável
+- **Schema (`schema.ts`)** → validação centralizada
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### ✅ **Design System com ShadCN**
+Componentes reutilizáveis em `components/ui`, com consistência visual.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ✅ **Rotas públicas/privadas separadas**
+Pastas `(public)` e `(private)` garantem controle de layout e acesso. Middleware redireciona baseado em autenticação via cookie.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### ✅ **Testabilidade**
+Separação clara permite:
+- Testes unitários dos hooks e validação
+- Testes de interface com `@testing-library/react`
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔒 Middleware
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`middleware.ts` controla o acesso com base nas rotas declaradas em `PUBLIC_ROUTES`, redirecionando usuários não autenticados ou já autenticados quando necessário.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Motivação
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Mesmo sendo um projeto de estudo, foi adotada uma estrutura pensada para:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Aprendizado prático de boas práticas de arquitetura
+- Facilitar escalabilidade e manutenção
+- Servir como **template base para futuros projetos profissionais**
+- Mostrar domínio técnico em **organização, clean code e arquitetura moderna**
+
+---
+
+## 🧪 Tecnologias principais
+
+- [Next.js 14+ (App Router)](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [ShadCN UI](https://ui.shadcn.com/)
+- [Jest + Testing Library](https://testing-library.co/)
+
+---
+
+## 🧭 Roadmap futuro (sugestão)
+
+- [ ] Internacionalização (i18n)
+- [ ] Dark Mode
+- [ ] Testes E2E com Cypress ou Playwright
+- [ ] Dockerização
+- [ ] CI/CD
+
+---
+
+## 🤝 Autor
+
+Desenvolvido por **Matheus Francisco Rodrigues Alves**  
+Curso: _Análise e Desenvolvimento de Sistemas – FATEC Mogi das Cruzes_  
+Contato: [seu email/linkedin aqui]
+
+---
