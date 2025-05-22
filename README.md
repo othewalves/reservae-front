@@ -1,25 +1,35 @@
 ---
+# Reservaê
+A reserva dos seu livros preferidos ficou mais ágil. Explore o catálogo online, entre na fila de espera e renove seus empréstimos com apenas alguns cliques.
+---
 
 ## 🎯 Padrões e Decisões
 
 ### ✅ **Feature-based Architecture**
+
 Organização por domínio funcional. Cada pasta em `features/` representa uma área do sistema.
 
 ### ✅ **Container/Presenter Pattern**
+
 Separação entre:
+
 - **Presenter (`LoginForm`)** → apenas JSX/estética
 - **Container (`LoginContainer`)** → conecta lógica e dados
 - **Hook (`useLogin`)** → lógica isolada e testável
 - **Schema (`schema.ts`)** → validação centralizada
 
 ### ✅ **Design System com ShadCN**
+
 Componentes reutilizáveis em `components/ui`, com consistência visual.
 
 ### ✅ **Rotas públicas/privadas separadas**
+
 Pastas `(public)` e `(private)` garantem controle de layout e acesso. Middleware redireciona baseado em autenticação via cookie.
 
 ### ✅ **Testabilidade**
+
 Separação clara permite:
+
 - Testes unitários dos hooks e validação
 - Testes de interface com `@testing-library/react`
 
@@ -67,6 +77,6 @@ Mesmo sendo um projeto de estudo, foi adotada uma estrutura pensada para:
 
 Desenvolvido por **Matheus Francisco Rodrigues Alves**  
 Curso: _Análise e Desenvolvimento de Sistemas – FATEC Mogi das Cruzes_  
-Contato: [seu email/linkedin aqui]
+Contato: https://www.linkedin.com/in/dev-matheus-alves/
 
 ---
